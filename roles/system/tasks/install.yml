@@ -1,0 +1,6 @@
+---
+- name: install packages
+  become: true
+  yum:
+    name: '{{centos.packages}}'
+    state: present

@@ -1,0 +1,15 @@
+---
+# filename: /roles/system/tasks/config.yml
+- name: change hostname
+  become: yes
+  hostname:
+    name: '{{hostname}}'
+
+- name: map host 
+  become: yes
+  lineinfile:
+    path: /etc/hosts
+    insertafter: EOF
+    line: '{{item.value.name}}  {{item.value.ip}}'
+  with_dict: "{{centos['hosts']}}"
+  

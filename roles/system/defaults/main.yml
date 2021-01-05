@@ -1,0 +1,15 @@
+---
+# defaults file for system
+hostname: fpt_server
+centos:
+  packages:
+    - tree
+  
+  hosts:
+    web:
+      name: google.com
+      ip: 10.10.10.11     
+
+    database:
+      name: private_mysql
+      ip: 10.10.10.20
